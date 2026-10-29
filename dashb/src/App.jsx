@@ -12,12 +12,12 @@ import card8 from './assets/card8.png'
 import card9 from './assets/card9.png'
 import AlbumDetails from './components/AlbumDetails'
 const albumCards = [
-  {id: 4, title: "Eagles", artists: "Ninety One", albumCardImg: card,
+  {id: 4, title: "Eagles", artists: "Ninety One", genre: "Q-pop (Qazaq-pop)", year: "2019", albumCardImg: card,
     songs: [
-      {id: 1, title: "Mooz", duration: "03:46"},
-      {id: 2, title: "Қайтадан", duration: "03:56"},
-      {id: 3, title: "Айыптама", duration: "03:55"},
-      {id: 4, title: "Қалай қарайсың", duration: "03:43"},
+      {id: 1, title: "Oinamaqo", duration: "03:54", album: "91"},
+      {id: 2, title: "Қайтадан", duration: "03:56", album: "Айыптама"},
+      {id: 3, title: "Abuse", duration: "03:02", album: "ABUSE"},
+      {id: 4, title: "OTTEGI", duration: "03:43", album: "GAP"},
     ]
   },
   {id: 1, title: "Marvel vibe", artists: "Alan Silvestri, Brian Tyler, Ramin Djawadi", albumCardImg: card2},
@@ -89,6 +89,9 @@ function App() {
       <AlbumDetails
       title={selectedAlbum.title}
       artists={selectedAlbum.artists}
+      genre={selectedAlbum.genre}
+      year={selectedAlbum.year}
+      description={selectedAlbum.description}
       albumCardImg={selectedAlbum.albumCardImg}
       onClose={() => setSelectedAlbum(null)}
       songs={selectedAlbum.songs}

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-function SongRow ({id, index, title, duration, heart, dots, onClick, addToLikedSongs, song, removeFromLikedSongs, likedSongs}) {
+function SongRow ({id, index, title, duration, heart, dots, onClick, addToLikedSongs, song, removeFromLikedSongs, likedSongs, albumTitle, albumArtists}) {
     const isFavorite = likedSongs.some(item => item.id === song.id) 
     const [isMenu, isSetMenu] = useState(false)
     return (
@@ -8,6 +8,8 @@ function SongRow ({id, index, title, duration, heart, dots, onClick, addToLikedS
                 <span className="index">{index + 1}</span>
                 <p className="song-title">{title}</p>
                 <p>{duration}</p>
+                <p>{song.artist ?? albumArtists}</p>
+                <p>{song.album ?? albumTitle}</p>
                 <div className="heart-dots">
                     <button className="favorite-button"onClick={() => 
                         {
